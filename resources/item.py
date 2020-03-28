@@ -49,8 +49,8 @@ class Item(Resource):
         data = Item.parser.parse_args()
         item = ItemModel.find_by_name(name)
         if item:
-            item['price'] = data['price']
-            item['store_id'] = data['store_id']
+            item.price = data['price']
+            item.store_id = data['store_id']
         else:
             item = ItemModel(name, **data)
 
