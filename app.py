@@ -13,10 +13,10 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
+db.init_app(app)
 @app.before_first_request
 def create_all_tables():
     db.create_all()
-db.init_app(app)
 
 
 app.secret_key = '1234'
