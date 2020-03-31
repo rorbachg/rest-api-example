@@ -40,7 +40,7 @@ def invalid_token_callback(error):
     }), 401
 
 @jwt.unauthorized_loader
-def unauthorized_callback():
+def unauthorized_callback(error):
     return jsonify({
         'description': 'Request does not contain access token',
         'error': 'authorization_required'
