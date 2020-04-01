@@ -7,6 +7,6 @@ RUN pip3 install -r /opt/source-code/requirements.txt
 EXPOSE 5000
 ENV LC_ALL en_US.utf-8
 ENV LANG en_US.utf-8
-ENV FLASK_APP /opt/source-code/app.py 
+ENV FLASK_APP /opt/source-code/app.py
 
 ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
