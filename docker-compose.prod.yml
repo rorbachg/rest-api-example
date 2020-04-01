@@ -7,11 +7,11 @@ services:
       - DATABASE_URL=postgres://user:pass@db/user
     volumes:
       - ./flask_app:/opt/source-code
-    ports:
-      - 5000:5000
+    expose:
+      - 5000
     depends_on:
       - db
-    command: flask run #gunicorn -w 1 -b :8000 app:app
+    command: gunicorn -w 1 -b 0.0.0.0:5000 app:app
 
   db:
     image: postgres:12-alpine
@@ -21,3 +21,12 @@ services:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=user
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./flask_app/opt/source-code
+    ports:
+       - 1337:80
+    depends_on:
+       - flask_app
