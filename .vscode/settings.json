@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "venv/bin/python",
-    "python.autoComplete.extraPaths": ["./code"],
+    "python.pythonPath": "flask_app/venv/bin/python",
+    "python.autoComplete.extraPaths": ["./flask_app"],
 }
