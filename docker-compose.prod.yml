@@ -24,8 +24,6 @@ services:
 
   nginx:
     build: ./nginx
-    volumes:
-      - ./flask_app/opt/source-code
     ports:
        - 1337:80
     depends_on:
