@@ -1,1 +1,6 @@
+# Purpose of this file is to make Heroku deployment possible, 
+# because Heroku look for this type of file in project root directory.
+# Since actual project is in flask_app directory, I need to point
+# there with this file.
+
 -r "flask_app/requirements.txt"
